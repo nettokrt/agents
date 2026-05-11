@@ -1,0 +1,26 @@
+{
+  "historia_id": "US-001",
+  "titulo": "Aluguel de veículo por categoria",
+  "ator": "usuário autenticado sem reserva ativa",
+  "acao": "solicitar aluguel de veículo pela categoria",
+  "objetivo_negocio": "iniciar uma reserva vinculada ao seu cadastro",
+  "criterios_de_aceite": [
+    "deve exibir categorias disponíveis na região",
+    "deve calcular valor com base na data de devolução",
+    "deve bloquear se usuário tiver pendência financeira"
+  ],
+  "fluxos_alternativos": [
+    "sem veículos disponíveis na categoria selecionada",
+    "cartão de crédito recusado na confirmação"
+  ],
+  "dados_de_teste": {
+    "usuario_valido": { "cpf": "000.000.000-00", "cartao": "ativo" },
+    "usuario_bloqueado": { "cpf": "111.111.111-11", "pendencia": "debito em aberto" }
+  },
+  "contexto_tecnico": {
+    "url_base": "https://app.movida.com.br",
+    "autenticacao_necessaria": true,
+    "tipo": "web"
+  },
+  "fora_do_escopo": ["cancelamento de reserva", "extensão de prazo"]
+}

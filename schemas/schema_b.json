@@ -1,0 +1,55 @@
+{
+  "suite": "Aluguel de veículo por categoria",
+  "historia_id": "US-001",
+  "cenarios": [
+    {
+      "id": "TC-001",
+      "titulo": "Aluguel com sucesso — usuário válido",
+      "tipo": "funcional",
+      "prioridade": "alta",
+      "pre_condicoes": [
+        "usuário autenticado",
+        "nenhuma reserva ativa"
+      ],
+      "dados": {
+        "cpf": "000.000.000-00",
+        "categoria": "SUV",
+        "data_devolucao": "2026-05-16"
+      },
+      "passos": [
+        "acessar tela de categorias de veículos",
+        "selecionar categoria SUV",
+        "informar data de devolução",
+        "confirmar reserva"
+      ],
+      "resultado_esperado": "reserva criada com número de confirmação exibido na tela",
+      "contexto_tecnico": {
+        "url": "/alugar",
+        "tipo_teste": "web",
+        "seletores_conhecidos": {}
+      }
+    },
+    {
+      "id": "TC-002",
+      "titulo": "Bloqueio de usuário com pendência financeira",
+      "tipo": "negativo",
+      "prioridade": "alta",
+      "pre_condicoes": [
+        "usuário autenticado com débito em aberto"
+      ],
+      "dados": {
+        "cpf": "111.111.111-11"
+      },
+      "passos": [
+        "acessar tela de categorias de veículos",
+        "selecionar qualquer categoria"
+      ],
+      "resultado_esperado": "mensagem de bloqueio exibida, botão de confirmar desabilitado",
+      "contexto_tecnico": {
+        "url": "/alugar",
+        "tipo_teste": "web",
+        "seletores_conhecidos": {}
+      }
+    }
+  ]
+}
