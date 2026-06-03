@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema_a",
+  "title": "Contract A — Agent 0 (Story Refiner) output / Agent 1 (Modeler) input",
+  "description": "Structured user story. Mirrors schemas/schema_a.json (the canonical example). Do not change field names without updating both agents.",
+  "type": "object",
+  "required": [
+    "historia_id",
+    "titulo",
+    "ator",
+    "acao",
+    "objetivo_negocio",
+    "criterios_de_aceite",
+    "contexto_tecnico"
+  ],
+  "properties": {
+    "historia_id": { "type": "string", "minLength": 1 },
+    "titulo": { "type": "string", "minLength": 1 },
+    "ator": { "type": "string" },
+    "acao": { "type": "string" },
+    "objetivo_negocio": { "type": "string" },
+    "criterios_de_aceite": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "fluxos_alternativos": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dados_de_teste": { "type": "object" },
+    "contexto_tecnico": {
+      "type": "object",
+      "required": ["autenticacao_necessaria", "tipo"],
+      "properties": {
+        "url_base": { "type": "string" },
+        "autenticacao_necessaria": { "type": "boolean" },
+        "tipo": { "type": "string" }
+      }
+    },
+    "fora_do_escopo": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

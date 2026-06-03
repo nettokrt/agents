@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema_b",
+  "title": "Contract B — Agent 1 (Modeler) output / Agent 2 (Automator) input",
+  "description": "Structured test scenarios. Mirrors schemas/schema_b.json (the canonical example). Do not change field names without updating both agents.",
+  "type": "object",
+  "required": ["suite", "historia_id", "cenarios"],
+  "properties": {
+    "suite": { "type": "string", "minLength": 1 },
+    "historia_id": { "type": "string", "minLength": 1 },
+    "cenarios": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "titulo",
+          "tipo",
+          "prioridade",
+          "passos",
+          "resultado_esperado",
+          "contexto_tecnico"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "titulo": { "type": "string", "minLength": 1 },
+          "tipo": { "type": "string" },
+          "prioridade": { "type": "string" },
+          "pre_condicoes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "dados": { "type": "object" },
+          "passos": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1
+          },
+          "resultado_esperado": { "type": "string", "minLength": 1 },
+          "contexto_tecnico": {
+            "type": "object",
+            "required": ["url", "tipo_teste"],
+            "properties": {
+              "url": { "type": "string" },
+              "tipo_teste": { "type": "string" },
+              "seletores_conhecidos": { "type": "object" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

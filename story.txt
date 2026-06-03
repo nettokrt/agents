@@ -1,0 +1,6 @@
+Como usuário autenticado, quero filtrar produtos por categoria na loja para
+encontrar itens mais rápido.
+
+Ao acessar a página de produtos, deve ser possível selecionar uma categoria e
+ver apenas os produtos daquela categoria. Se não houver produtos na categoria,
+mostrar uma mensagem de "nenhum produto encontrado".
