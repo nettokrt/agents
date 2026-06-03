@@ -15,6 +15,16 @@ story.txt → Agent 0 (Story Refiner)  → schema_a
 Each agent receives only the validated JSON output of the previous stage — never the
 conversation history. See [CLAUDE.md](CLAUDE.md) for the full architecture and rules.
 
+## Related repositories
+
+This repo is the agent pipeline in a three-part QA portfolio:
+
+| Repo | What it is |
+|------|------------|
+| **[nettokrt/agents](https://github.com/nettokrt/agents)** | **(this repo)** The QA Agent Pipeline — a 4-agent system (Anthropic SDK + server-side MCP) that refines a user story, models scenarios, generates self-healing Playwright specs, and triages CI failures into Jira. |
+| **[nettokrt/playwright-saucedemo-e2e](https://github.com/nettokrt/playwright-saucedemo-e2e)** | The Playwright (TypeScript) E2E suite against SauceDemo — Page Object Model, custom fixtures (`loginAs` / `loginPage`), ESLint quality gate, and GitHub Actions CI. |
+| **[nettokrt/personal-knowledge-playwright](https://github.com/nettokrt/personal-knowledge-playwright)** | The QA knowledge vault — an [Obsidian](https://obsidian.md) study vault with the notes, plans, and test-case specs behind the suite. The *why* and the connective tissue between the repos. |
+
 ## Setup
 
 ```bash
